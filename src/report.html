@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/blue.css" id="theme" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/util_login.css">
+    <link rel="stylesheet" type="text/css" href="css/main_login.css">
+
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+
+	<div id="main-wrapper">
+		<header class="topbar">
+			<nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						<b> <img src="assets/images/Brand.png" alt="homepage" class="dark-logo" /> </b>
+					</a>
+				</div>
+
+				<div class="navbar-collapse">
+					<ul class="navbar-nav mr-auto mt-md-0 ">
+						<li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+						<div id="title-header"> Meeting Room Maintenance Report System </div>
+					</ul>
+
+					<ul class="navbar-nav my-lg-0">
+						<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/user.png" alt="user" class="profile-pic m-r-5" /> Username </a>
+                        </li>
+					</ul>
+				</div>
+
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<div class="scroll-sidebar">
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+						<li>
+                            <a href="index.html" class="waves-effect"><i class="fa fa-clock-o m-r-10" aria-hidden="true"></i>Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="report.html" class="waves-effect"><i class="fa fa-exclamation m-r-10" aria-hidden="true"></i>Report</a>
+                        </li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				<div class="row page-titles">
+					<div class="col-md-6 col-8 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0">Profile</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Report</li>
+                        </ol>
+                    </div>
+				</div>
+
+				<div class="row">
+					
+                    <div class="col-lg-8 col-xlg-9 col-md-7" style="margin-right: 15%; margin-left: 15%">
+                        <div class="card">
+                            <div class="card-block">
+                                <form class="form-horizontal form-material" onSubmit="App.Report();">
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Room</label>
+                                        <div class="col-sm-12">
+                                            <select id="room_problem" class="form-control form-control-line">
+                                                <option>MA001</option>
+                                                <option>MA002</option>
+                                                <option>MA003</option>
+                                                <option>MA004</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Equipments</label>
+                                        <div class="col-sm-12">
+                                            <select id="equip_problem" class="form-control form-control-line">
+                                                <option>Air Conditioner</option>
+                                                <option>Projector</option>
+                                                <option>Chair</option>
+                                                <option>LED Lighting</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">Problem</label>
+                                        <div class="col-md-12">
+                                            <textarea rows="2" class="form-control form-control-line"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-login100-form-btn" style="margin-top: 30px;">
+                                        <button class="login100-form-btn" href="login.html" type="submit">
+                                            Report
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+				</div>
+
+				
+
+			</div>
+
+			<footer class="footer text-center">
+                © Maintenance Report System, Incentive
+            </footer>
+
+		</div>
+	</div>
+
+	<script src="assets/plugins/jquery/jquery.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+
+    <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="js/custom.min.js"></script>
+
+    <script src="js/main_login.js"></script>
+
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
