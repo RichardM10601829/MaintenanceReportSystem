@@ -18,6 +18,7 @@
   "dependencies": {
     "@dexon-foundation/ganache-cli": "^6.2.5",
     "express": "^4.16.4",
+    "node-gyp": "^3.8.0",
     "truffle-hdwallet-provider": "^1.0.4"
   }
 }

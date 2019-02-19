@@ -60,11 +60,16 @@ App = {
   		var MaintenanceReportBalance;
   		var acc;
 
-		web3.eth.getCoinbase(function(err, account) {
+  		web3.eth.getAccounts(function(err, send) {
+			App.account = send[0];
+			console.log(App.account)
+	    });
+
+		/*web3.eth.getCoinbase(function(err, account) {
 			if (err === null) {
 				App.account = account;
 			}
-	    });
+	    });*/
 
   		// Dashboard Layout
 	    App.contracts.MaintenanceReport.deployed().then(function(instance) {
@@ -113,22 +118,29 @@ App = {
 			console.error(err);
 		});
 
+		//web3.eth.accounts.create(App.account);
+
+		/*var room_problem = String("MA001");
+  		var equip_problem = String("Air Conditioner");
+  		var problem = String("Broken");
+
+  		App.contracts.MaintenanceReport.deployed().then(function(instance) {
+  			console.log(App.account);
+			return instance.reportRoom(room_problem, equip_problem, problem, { from: App.account, gas:3000000 });
+		}).catch(function(err){
+			console.error(err);
+		});*/
+
   	},
 
   	Report: function() {
-
-  		web3.eth.getCoinbase(function(err, account) {
-			if (err === null) {
-				App.account = account;
-			}
-	    });
 
   		var room_problem = String($("#room_problem").val());
   		var equip_problem = String($("#equip_problem").val());
   		var problem = String($("#Problem").val());
 
   		App.contracts.MaintenanceReport.deployed().then(function(instance) {
-			return instance.reportRoom(App.account, room_problem, equip_problem, problem, { from: App.account, gas:3000000 });
+			return instance.reportRoom(room_problem, equip_problem, problem, { from: App.account, gas:3000000 });
 		});
 
   	}

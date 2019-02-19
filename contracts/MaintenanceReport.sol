@@ -54,7 +54,7 @@ contract MaintenanceReport{
         return (Rooms[name].number_report, Rooms[name].status_room);
     }
     
-    function reportRoom(address addr, string room_name, string equipment, string problem) public {
+    function reportRoom(string room_name, string equipment, string problem) public {
         ReportRooms[no_problem].room_name = room_name;
         ReportRooms[no_problem].equip = equipment;
         ReportRooms[no_problem].problem = problem;
@@ -66,8 +66,8 @@ contract MaintenanceReport{
         
         if (Rooms[room_name].number_report <= 4)
         {
-            balance_token[addr] += 10;
-            emit Incentive(no_problem, addr);
+            balance_token[msg.sender] += 10;
+            emit Incentive(no_problem, msg.sender);
         }
         
         no_problem = no_problem+1;

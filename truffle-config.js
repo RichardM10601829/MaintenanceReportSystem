@@ -12,7 +12,7 @@
 
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const secret = require('../secret')
+const secret = require('./secret')
 const mnemonic = secret.mnemonic
 
 module.exports = {
@@ -29,6 +29,20 @@ module.exports = {
       network_id: "*",
       host: "localhost",
       port: 8545,
+    },
+
+    dexonTestnet: {
+      provider: () => (
+        new HDWalletProvider(
+          mnemonic,
+          'http://testnet.dexon.org:8545',
+          0,
+          1,
+          true,
+          "m/44'/237'/0'/0/"
+        )
+      ),
+      network_id: "*",
     },
   }
 };
